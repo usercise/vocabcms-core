@@ -6,6 +6,7 @@ export interface IMap<T> {
 export interface IRoute {
     path: string;
     template: string;
+    exact?: boolean;
     props: {
         meta?: any;
         title?: string;
