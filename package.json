@@ -16,12 +16,14 @@
     "@types/react-router": "^4.0.24",
     "@types/react-router-dom": "^4.2.6",
     "awesome-typescript-loader": "^5.0.0",
-    "react": "^16.3.2",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
     "source-map-loader": "^0.2.3",
     "typescript": "^2.8.3",
     "webpack": "^4.7.0",
     "webpack-cli": "^2.1.2"
+  },
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
   }
 }
