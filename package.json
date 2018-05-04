@@ -1,0 +1,23 @@
+{
+  "name": "vocabcms-core",
+  "version": "1.0.0",
+  "description": "Core library of VocabCMS Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cms"
+  ],
+  "author": "Johan R-G",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.3.13",
+    "awesome-typescript-loader": "^5.0.0",
+    "react": "^16.3.2",
+    "source-map-loader": "^0.2.3",
+    "typescript": "^2.8.3",
+    "webpack": "^4.7.0",
+    "webpack-cli": "^2.1.2"
+  }
+}
