@@ -13,6 +13,11 @@
     "LICENSE",
     "README.md"
   ],
+  "types" : "dist/interface.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usercise/vocabcms-core.git"
+  },
   "author": "Johan R-G",
   "license": "MIT",
   "devDependencies": {
