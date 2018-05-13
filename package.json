@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Core library of VocabCMS Framework",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "cms"
@@ -13,19 +13,48 @@
     "LICENSE",
     "README.md"
   ],
-  "types" : "dist/interface.d.ts",
+  "types": "dist/interface.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/usercise/vocabcms-core.git"
   },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/test-shim.js",
+      "<rootDir>/test-setup.js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/test-preprocessor.js"
+    },
+    "testRegex": "(/src/.*/__tests__/.*|(\\.|/)(test|spec))\\.(tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
   "author": "Johan R-G",
   "license": "MIT",
   "devDependencies": {
+    "@types/enzyme": "^3.1.10",
+    "@types/jest": "^22.2.3",
     "@types/react": "^16.3.13",
+    "@types/react-dom": "^16.0.5",
     "@types/react-router": "^4.0.24",
     "@types/react-router-dom": "^4.2.6",
+    "@types/react-test-renderer": "^16.0.1",
     "awesome-typescript-loader": "^5.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.4.3",
+    "jest-enzyme": "^6.0.0",
+    "react-dom": "^16.3.2",
+    "react-test-renderer": "^16.3.2",
     "source-map-loader": "^0.2.3",
+    "ts-jest": "^22.4.6",
     "typescript": "^2.8.3",
     "webpack": "^4.7.0",
     "webpack-cli": "^2.1.2"

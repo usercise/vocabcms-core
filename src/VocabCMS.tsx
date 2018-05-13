@@ -7,8 +7,15 @@ export default class VocabCMS extends React.Component<IVocabCMSProps, IVocabCMSS
     constructor(props: IVocabCMSProps) {
         super(props);
         const emptyRoute: Array<IRoute> = [];
-        this.state = {
-            routes: props.initialState.routes || emptyRoute,
+        if (props.initialState && props.initialState.routes) {
+          this.state = {
+              routes: props.initialState.routes,
+          }
+        }
+        else {
+          this.state = {
+              routes: emptyRoute,
+          }
         }
     }
 
@@ -17,9 +24,9 @@ export default class VocabCMS extends React.Component<IVocabCMSProps, IVocabCMSS
             <Router>
                 <Switch>
                     {this.state.routes.map(
-                        (route, i) => 
-                            <Route key={i} 
-                                    path={route.path} 
+                        (route, i) =>
+                            <Route key={i}
+                                    path={route.path}
                                     exact={route.exact}
                                     render={props => (
                                         <p>{route.template}</p>
