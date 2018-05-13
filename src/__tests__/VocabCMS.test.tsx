@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import VocabCMS from '../App';
+import VocabCMS from '../VocabCMS';
 
 it('renders a browser router', () => {
     const cms = shallow(<VocabCMS />);
