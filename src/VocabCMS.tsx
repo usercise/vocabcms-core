@@ -19,6 +19,12 @@ export default class VocabCMS extends React.Component<IVocabCMSProps, IVocabCMSS
         }
     }
 
+    addRoute(route: IRoute) {
+        this.setState((prevState) =>
+            ({routes: [...prevState.routes, route]})
+        );
+    }
+
     render() {
         return (
             <Router>

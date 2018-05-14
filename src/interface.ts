@@ -1,3 +1,6 @@
+import { ReactNode } from 'react';
+import { match } from 'react-router';
+
 
 export interface IMap<T> {
     [key: string]: T;
@@ -28,8 +31,16 @@ export interface IComponent {
 
 export interface IVocabCMSState { routes: Array<IRoute>; }
 
-export interface IVocabCMSProps { 
-    readonly initialState?: { 
+export interface IVocabCMSProps {
+    readonly children?: ReactNode;
+    readonly initialState?: {
         routes: Array<IRoute>;
     };
+}
+
+export interface ILoadingScreenProps {
+    readonly children?: ReactNode;
+    readonly pageLookupServicelUrl: string;
+    readonly match: match<object>;
+    readonly addRoute: any;
 }
