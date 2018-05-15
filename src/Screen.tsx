@@ -1,17 +1,18 @@
 import * as React from 'react';
-import { ISlot } from './interface';
+import { IMap, ISlot } from './interface';
 
 export interface IScreenProps {
-  slots: Array<ISlot>;
+  slots: IMap<ISlot>;
   template: string;
   className?: string;
+  [key: string]: any;
 }
 
-class Screen extends React.Component<IScreenProps, {slots: Array<ISlot>;}> {
+class Screen extends React.Component<IScreenProps, {slots: IMap<ISlot>;}> {
     constructor(props: IScreenProps) {
         super(props);
         this.state = {
-            slots: props.slots,
+            slots: props.slots || {},
         }
     }
 

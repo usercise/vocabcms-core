@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router";
 import { BrowserRouter as Router } from "react-router-dom";
 import { IVocabCMSProps, IVocabCMSState, IRoute } from "./interface";
 import LoadingScreen from './template/LoadingScreen';
+import Screen from './Screen';
 
 export default class VocabCMS extends React.Component<IVocabCMSProps, IVocabCMSState> {
     constructor(props: IVocabCMSProps) {
@@ -36,7 +37,7 @@ export default class VocabCMS extends React.Component<IVocabCMSProps, IVocabCMSS
                                     path={route.path}
                                     exact={route.exact}
                                     render={props => (
-                                        <p>{route.template}</p>
+                                        <Screen template={route.template} {...props} {...route.props} />
                                     )}
                     />)}
                     <Route key="loadingScreen" render={({ match }) =>
