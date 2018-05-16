@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { IMap, ISlot } from './interface';
+import { pluginManager } from './index';
 
 export interface IScreenProps {
   slots: IMap<ISlot>;
@@ -25,7 +26,7 @@ class Screen extends React.Component<IScreenProps, {slots: IMap<ISlot>;}> {
     }
 
     render() {
-        const template = this.props.template;
+        const template = pluginManager.templateRegistry.get(this.props.template);
         return React.createElement(
           template,
           {...this.props, "updateSlot": this.updateSlot.bind(this), "slots": this.state.slots}

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ILoadingScreenProps } from '../interface';
-
+import InfinityLoader from '../component/InfinityLoader';
 
 class LoadingScreen extends React.Component<ILoadingScreenProps,  {notFound: boolean; loading: boolean; }, {}> {
   constructor(props: ILoadingScreenProps) {
@@ -19,7 +19,7 @@ class LoadingScreen extends React.Component<ILoadingScreenProps,  {notFound: boo
   lookupUrl(url: string) {
     fetch(this.props.pageLookupServicelUrl, { 'method': 'post', body: `{ url: ${url} }` }).then((response) => {
       if (200 === response.status) {
-        this.setState({loading: false });
+        this.setState({ loading: false });
         this.props.addRoute({
           ...response.json
         });
@@ -40,9 +40,7 @@ class LoadingScreen extends React.Component<ILoadingScreenProps,  {notFound: boo
         </main>
       );
     }
-    return (
-      <span>Loading...</span>
-    );
+    return <InfinityLoader />;
   }
 }
 
