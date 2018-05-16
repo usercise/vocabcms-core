@@ -12,7 +12,7 @@ export default class PluginRegistry {
 
     register(key: string, value: any): void {
         console.log(`Register ${this.type}: ${key} = ${value}`);
-        this._registry.set(key, value);
+        this._registry[key] = value;
     }
 
     entries(): IMap<any> {
