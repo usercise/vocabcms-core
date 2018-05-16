@@ -19,7 +19,7 @@ export default class PluginRegistry {
         return this._registry;
     }
 
-    keys(): string {
+    keys(): string[] {
         return keys(this._registry);
     }
 

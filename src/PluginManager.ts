@@ -12,16 +12,16 @@ class PluginManager {
     this.templateRegistry = new PluginRegistry('Template');
   }
 
-  register(name: string, entry: any): void {
-    if (has(this.plugins, name)) {
+  register(key: string, entry: {displayName: string, components?: Map<string, object>, templates?: Map<string, object>}): void {
+    if (has(this.plugins, key)) {
       throw "Duplicate entry";
     }
-    this.plugins[name] = entry;
+    this.plugins[key] = entry;
     if (entry.components) {
-      each(entry.components, (key: string, value: object) => this.componentRegistry.register(`${name}::${key}`, value));
+      each(entry.components, (value: object, k: string) => this.componentRegistry.register(`${key}::${k}`, value));
     }
     if (entry.templates) {
-      each(entry.templates, (key: string, value: object) => this.templateRegistry.register(`${name}::${key}`, value));
+      each(entry.templates, (value: object, k: string) => this.templateRegistry.register(`${key}::${k}`, value));
     }
   }
 }
