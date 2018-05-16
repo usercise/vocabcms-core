@@ -2,7 +2,7 @@ import PluginRegistry from '../PluginRegistry';
 import 'jest';
 
 describe('PluginRegistry', () => {
-  let pluginRegistry;
+  let pluginRegistry: PluginRegistry;
   beforeEach(() => {
     pluginRegistry = new PluginRegistry('test');
   });

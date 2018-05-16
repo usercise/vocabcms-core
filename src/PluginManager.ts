@@ -1,7 +1,7 @@
 import PluginRegistry from './PluginRegistry';
 import { has, each } from 'lodash';
 
-class PluginManager {
+export default class PluginManager {
   plugins: {[key:string]:object};
   componentRegistry: PluginRegistry;
   templateRegistry: PluginRegistry;
