@@ -14,10 +14,7 @@
     "README.md"
   ],
   "types": "dist/interface.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/usercise/vocabcms-core.git"
-  },
+  "repository": "git+https://github.com/usercise/vocabcms-core.git",
   "jest": {
     "setupFiles": [
       "<rootDir>/test-shim.js",
@@ -65,5 +62,6 @@
     "react": "^16.3.2",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2"
-  }
+  },
+  "main": "index.js"
 }
