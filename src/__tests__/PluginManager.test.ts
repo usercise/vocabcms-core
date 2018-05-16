@@ -54,11 +54,9 @@ describe('PluginManager', () => {
     const componentRegistry = pluginManager.componentRegistry;
     pluginManager.register(pluginName, testObj);
 
-    expect(pluginManager.plugins.test).toBeDefined();
     expect(pluginManager.plugins.test).toEqual(testObj);
     expect(componentRegistry.keys()).toHaveLength(1);
     expect(componentRegistry.has(pluginComponentName)).toEqual(true);
-    expect(componentRegistry.get(pluginComponentName)).toHaveLength(1);
     expect(componentRegistry.get(pluginComponentName)).toEqual(componentValue);
   });
 
@@ -74,11 +72,9 @@ describe('PluginManager', () => {
       const templateRegistry = pluginManager.templateRegistry;
       pluginManager.register(pluginName, testObj);
 
-      expect(pluginManager.plugins.test).toBeDefined();
       expect(pluginManager.plugins.test).toEqual(testObj);
       expect(templateRegistry.keys()).toHaveLength(1);
       expect(templateRegistry.has(pluginTemplateName)).toEqual(true);
-      expect(templateRegistry.get(pluginTemplateName)).toHaveLength(1);
       expect(templateRegistry.get(pluginTemplateName)).toEqual(templateValue);
     });
 
