@@ -1,5 +1,3 @@
-import forEach from 'lodash/each';
-
 export class Logger {
   backends: any[];
 
@@ -14,47 +12,39 @@ export class Logger {
     this.backends.push(backend);
   }
 
-  log(): void {
-    forEach(this.backends, (entry: any) => {
-      if ('function' === typeof entry.log) { entry.log(...arguments) }
+  runLoggers(name: string, ...args: any[]): void {
+    this.backends.forEach((entry: any) => {
+      if ('function' === typeof entry[name]) { entry[name](...args) }
     });
   }
 
-  debug(): void {
-    forEach(this.backends, (entry: any) => {
-      if ('function' === typeof entry.debug) { entry.debug(...arguments) }
-    });
+  log(...args: any[]): void {
+    this.runLoggers('log', args);
   }
 
-  info(): void {
-    forEach(this.backends, (entry: any) => {
-      if ('function' === typeof entry.info) { entry.info(...arguments) }
-    });
+  debug(...args: any[]): void {
+    this.runLoggers('debug', args);
   }
 
-  warn(): void {
-    forEach(this.backends, (entry: any) => {
-      if ('function' === typeof entry.warn) { entry.warn(...arguments) }
-    });
+  info(...args: any[]): void {
+    this.runLoggers('info', args);
   }
 
-  error(): void {
-    forEach(this.backends, (entry: any) => {
-      if ('function' === typeof entry.error) { entry.error(...arguments) }
-    });
+  warn(...args: any[]): void {
+    this.runLoggers('warn', args);
   }
 
-  trace(): void {
-    forEach(this.backends, (entry: any) => {
-      if ('function' === typeof entry.trace) { entry.trace(...arguments) }
-    });
+  error(...args: any[]): void {
+    this.runLoggers('error', args);
+  }
+
+  trace(...args: any[]): void {
+    this.runLoggers('trace', args);
   }
 
 
-  assert(): void {
-    forEach(this.backends, (logger: any) => {
-      if ('function' === typeof logger.assert) { logger.assert(...arguments) }
-    });
+  assert(...args: any[]): void {
+    this.runLoggers('assert', args);
   }
 }
 
