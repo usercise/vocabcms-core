@@ -1,4 +1,4 @@
-import PluginManager from '../PluginManager';
+import PluginManager from './PluginManager';
 import 'jest';
 
 describe('PluginManager', () => {

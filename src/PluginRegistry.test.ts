@@ -1,4 +1,4 @@
-import PluginRegistry from '../PluginRegistry';
+import PluginRegistry from './PluginRegistry';
 import 'jest';
 
 describe('PluginRegistry', () => {
